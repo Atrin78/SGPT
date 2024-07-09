@@ -55,6 +55,9 @@ def compute_accuracy_our(global_model,data_loader_dict,args):
         test_results[net_id]['loss'] = test_avg_loss 
         test_results[net_id]['correct'] = test_correct
         test_results[net_id]['total'] = test_total
+        print(net_id)
+        print(test_results[net_id]['correct'])
+        print(test_results[net_id]['total'])
         global_model.cluster_size = {i:0 for i in range(args.key_prompt)}
     
     #### global performance
