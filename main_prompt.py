@@ -142,9 +142,9 @@ for round in range(args.comm_round):
     #     net.args.domain_query = True
     print('########### Now is the round {} ######'.format(round))
     arr = np.arange(args.n_parties)
-  #  np.random.shuffle(arr)
-   # selected = arr[:int(args.n_parties * args.sample)]
-    selected = arr[2:]
+    np.random.shuffle(arr)
+    selected = arr[:int(args.n_parties * args.sample)]
+   # selected = arr[2:]
     for ix in range(len(selected)):
         param_dict = {}
         idx = selected[ix]
