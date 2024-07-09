@@ -374,8 +374,8 @@ class VisionTransformer_m(nn.Module):
                 lis_prompt = []
                 for param in prompt_list:
                     lis_prompt.append(param)
-                print(topk[:,:])
-                ensemble_prompts = torch.cat(lis_prompt,dim=1)[0][topk[:,:]]
+              #  print(topk[:,:])
+                ensemble_prompts = torch.cat(lis_prompt,dim=1)[0][3 - topk[:,:]]
                 x=  torch.cat((
                             x[:, :1, :],
                             ensemble_prompts,
