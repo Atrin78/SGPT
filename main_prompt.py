@@ -42,6 +42,7 @@ def get_args():
     parser.add_argument('--domain_query', action='store_true')   
     parser.add_argument('--all_moment', action='store_true') 
     parser.add_argument('--root_path', type=str, default='', help='Noise type: None/increasng/space')
+    parser.add_argument('--tta', action='store_true') 
     """
     Used for model 
     """
