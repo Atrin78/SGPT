@@ -268,7 +268,7 @@ def train_local_twostage(net,args,param_dict):
     net = network_training_base(net,optimizer,args,train_dataloader,test_dataloader)
     net.selection = True
     net.train()
-    optimizer = optim.SGD([p for k,p in net.named_parameters() if p.requires_grad  and 'head' not in k and 'prompt_keys_pr' not in k and 'prompt_common_g' not in k  and 'common' not in k ], lr=lr, momentum=args.rho, weight_decay=args.reg)
+    optimizer = optim.SGD([p for k,p in net.named_parameters() if p.requires_grad and 'head' not in k  and 'prompt_keys_pr' not in k and 'prompt_common_g' not in k  and 'common' not in k ], lr=lr, momentum=args.rho, weight_decay=args.reg)
     criterion = nn.CrossEntropyLoss().to(args.device)
     cnt = 0
     for epoch in range(args.epochs):
