@@ -379,7 +379,7 @@ class VisionTransformer_m(nn.Module):
                     ensemble_prompts = torch.cat(lis_prompt,dim=1)[0][9 - topk[:,:]]
                 else:
                     ensemble_prompts = torch.cat(lis_prompt,dim=1)[0][topk[:,:]]
-               print(ensemble_prompts.shape)
+                print(ensemble_prompts.shape)
                 x=  torch.cat((
                             x[:, :1, :],
                             ensemble_prompts,
