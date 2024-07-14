@@ -264,8 +264,8 @@ def train_local_twostage(net,args,param_dict):
     lr = args.lr
     net.train()
     net.selection = False
-    optimizer = optim.SGD([p for k,p in net.named_parameters() if p.requires_grad  and  ( 'common' in  k )], lr=lr, momentum=args.rho, weight_decay=args.reg)
-    net = network_training_base(net,optimizer,args,train_dataloader,test_dataloader)
+   # optimizer = optim.SGD([p for k,p in net.named_parameters() if p.requires_grad  and  ( 'common' in  k )], lr=lr, momentum=args.rho, weight_decay=args.reg)
+   # net = network_training_base(net,optimizer,args,train_dataloader,test_dataloader)
     net.selection = True
     net.train()
     optimizer = optim.SGD([p for k,p in net.named_parameters() if p.requires_grad and 'head' not in k  and 'prompt_keys_pr' not in k and 'prompt_common_g' not in k  and 'common' not in k ], lr=lr, momentum=args.rho, weight_decay=args.reg)
