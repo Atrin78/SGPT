@@ -410,7 +410,7 @@ class VisionTransformer_m(nn.Module):
                             ), dim=1)
                 x, weights = layer_block(x)
                 #### datasets with domain feature shift
-                if self.args.dataset in ['office'] and i == 0:
+                if self.args.dataset in ['office'] and i == 5:
                     break
             x = self.transformer.encoder.encoder_norm(x)
             out_x = x[:,0]
