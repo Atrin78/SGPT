@@ -305,7 +305,7 @@ def train_local_twostage(net,args,param_dict):
         #     print('###### The Test ACC is {}'.format(test_acc))
         #     dict_loss["val/step"] = epoch
         #     dict_loss["val/test_acc_epoch"] = test_acc    
-    return output['embedding_dict']
+    return embedding_dict
 
 
 def mkdirs(dirpath):
