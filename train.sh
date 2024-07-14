@@ -15,6 +15,6 @@
 # office dataset
 python3 main_prompt.py  --pretrained_dir checkpoints/imagenet21k_ViT-B_16.npz --model_type ViT-B_16 \
           --n_parties 4 --cls_num 10 --device cuda:0 \
-         --batch-size 50 --comm_round 10  --test_round 1 --sample 1 --rho 0.9 --alg SGPT\
+         --batch-size 50 --comm_round 50  --test_round 1 --sample 1 --rho 0.9 --alg SGPT\
         --dataset office --lr 0.01 --epochs 5 --key_prompt 4 --avg_key --moment 0 \
          --share_blocks_g  0 1 --tta
