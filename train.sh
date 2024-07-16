@@ -13,8 +13,16 @@
 #         --share_blocks 0 1 2 3 4 --share_blocks_g  5 6 
 
 # office dataset
+#python3 main_prompt.py  --pretrained_dir checkpoints/imagenet21k_ViT-B_16.npz --model_type ViT-B_16 \
+#          --n_parties 4 --cls_num 10 --device cuda:0 \
+#         --batch-size 50 --comm_round 50  --test_round 1 --sample 1 --rho 0.9 --alg SGPT\
+#        --dataset office --lr 0.01 --epochs 0 --key_prompt 4 --avg_key --moment 0 \
+#          --tta
+
+# domainnet
 python3 main_prompt.py  --pretrained_dir checkpoints/imagenet21k_ViT-B_16.npz --model_type ViT-B_16 \
-          --n_parties 4 --cls_num 10 --device cuda:0 \
+          --n_parties 6 --cls_num 10 --device cuda:7 \
          --batch-size 50 --comm_round 50  --test_round 1 --sample 1 --rho 0.9 --alg SGPT\
-        --dataset office --lr 0.01 --epochs 0 --key_prompt 4 --avg_key --moment 0 \
+        --dataset domainnet --lr 0.01 --epochs 5 --key_prompt 6 --avg_key --moment 0 \
+        --share_blocks 0 1 2 3 4 --share_blocks_g  5 6\
           --tta
