@@ -25,4 +25,4 @@ python3 main_prompt.py  --pretrained_dir checkpoints/imagenet21k_ViT-B_16.npz --
          --batch-size 50 --comm_round 50  --test_round 1 --sample 1 --rho 0.9 --alg SGPT\
         --dataset domainnet --lr 0.01 --epochs 5 --key_prompt 6 --avg_key --moment 0 \
         --share_blocks 0 1 2 3 4 --share_blocks_g  5 6\
-          --tta --datadir ../../../mnt/nas-server/workspace/atrin/
+          --tta --datadir /mnt/nas-server/workspace/atrin/
