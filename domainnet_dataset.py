@@ -9,15 +9,15 @@ import os
 class DomainNetDataset(Dataset):
     def __init__(self, base_path, site, train=True, transform=None,retrun_index=False):
         if train:
-            self.paths, self.text_labels = np.load('../../mnt/nas-server/workspace/atrin/DomainNet/{}_train.pkl'.format(site), allow_pickle=True)
+            self.paths, self.text_labels = np.load('../../../mnt/nas-server/workspace/atrin/DomainNet/{}_train.pkl'.format(site), allow_pickle=True)
         else:
-            self.paths, self.text_labels = np.load('../../mnt/nas-server/workspace/atrin/DomainNet/{}_test.pkl'.format(site), allow_pickle=True)
+            self.paths, self.text_labels = np.load('../../../mnt/nas-server/workspace/atrin/DomainNet/{}_test.pkl'.format(site), allow_pickle=True)
             
         label_dict = {'bird':0, 'feather':1, 'headphones':2, 'ice_cream':3, 'teapot':4, 'tiger':5, 'whale':6, 'windmill':7, 'wine_glass':8, 'zebra':9}     
         
         self.labels = [label_dict[text] for text in self.text_labels]
         self.transform = transform
-        self.base_path = base_path if base_path is not None else '../../mnt/nas-server/workspace/atrin'
+        self.base_path = base_path if base_path is not None else '../../../mnt/nas-server/workspace/atrin'
         self.retrun_index = retrun_index
     def __len__(self):
         return len(self.labels)
