@@ -42,7 +42,7 @@ class DomainNetDataset(Dataset):
 def prepare_data_domain(args):
     net_dataidx_map_train = {}
     data_loader_dict = {}
-    data_base_path = 'data'
+    data_base_path = '/mnt/nas-server/workspace/atrin'
     transform_train = transforms.Compose([
             transforms.Resize([224, 224]),            
             # transforms.RandomHorizontalFlip(),
