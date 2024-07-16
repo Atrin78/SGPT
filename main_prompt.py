@@ -146,8 +146,8 @@ for round in range(args.comm_round):
     #     net.args.domain_query = True
     print('########### Now is the round {} ######'.format(round))
     arr = np.arange(args.n_parties)
-    np.random.shuffle(arr)
-    selected = arr[:int(args.n_parties * args.sample)]
+   # np.random.shuffle(arr)
+    selected = np.concat((arr[:1], arr[2:int(args.n_parties * args.sample)]))
    # selected = arr[2:]
     for ix in range(len(selected)):
         param_dict = {}
